@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="assets/css/auth.css">
+
+<div class="box" style="width:500px;">
+    <h2>Dashboard</h2>
+
+    <input type="file" id="resume">
+    <button onclick="uploadFile()">Upload</button>
+
+    <h3>Your Files</h3>
+    <ul id="fileList"></ul>
+
+    <p id="msg"></p>
+
+    <p><a href="login.html">Logout</a></p>
+</div>
+
+<script>
+function loadFiles() {
+    fetch("api/list_files.php")
+    .then(res => res.json())
+    .then(data => {
+        let list = document.getElementById("fileList");
+        list.innerHTML = "";
+
+        data.files.forEach(file => {
+            let li = document.createElement("li");
+
+            li.innerHTML = `
+                📄 ${file}
+                <button onclick="downloadFile('${file}')">Download</button>
+            `;
+
+            list.appendChild(li);
+        });
+    });
+}
+
+function uploadFile() {
+    let file = document.getElementById("resume").files[0];
+
+    let formData = new FormData();
+    formData.append("file", file);
+
+    fetch("api/upload.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("msg").innerText = data.message;
+
+        if (data.status === "success") {
+            loadFiles();
+        }
+    });
+}
+
+function downloadFile(file) {
+    window.open("api/download.php?file=" + file);
+}
+
+loadFiles();
+</script>

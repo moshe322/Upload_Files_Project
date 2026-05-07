@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Upload File</h2>
+
+<form id="uploadForm">
+    <input type="file" id="resume" required>
+    <button type="submit">Upload</button>
+</form>
+
+<p id="msg"></p>
+
+<hr>
+
+<h3>Your Files</h3>
+
+<button onclick="deleteSelected()">Delete Selected</button>
+
+<div id="fileList"></div>
+
+<script>
+// Upload file
+document.getElementById("uploadForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let file = document.getElementById("resume").files[0];
+    let formData = new FormData();
+    formData.append("resume", file);
+
+    fetch("/api/upload.php", {
+        method: "POST",
+        body: formData,
+        credentials: "include"   // 🔥 IMPORTANT (session fix)
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("msg").innerText = data.message;
+        loadFiles();
+    })
+    .catch(err => console.error(err));
+});
+
+// Load files
+async function loadFiles() {
+    try {
+        let res = await fetch('/api/get_files.php', {
+            credentials: "include"   // 🔥 IMPORTANT
+        });
+
+        let files = await res.json();
+
+        console.log("FILES:", files); // DEBUG
+
+        let html = "";
+
+        if (!files || files.length === 0) {
+            html = "<p>No files uploaded</p>";
+        } else {
+            files.forEach(file => {
+                html += `
+                    <div style="border:1px solid black; padding:8px; margin:5px;">
+                        <input type="checkbox" class="fileCheck" value="${file.id}">
+                        ${file.file_name}
+                    </div>
+                `;
+            });
+        }
+
+        document.getElementById("fileList").innerHTML = html;
+
+    } catch (err) {
+        console.error("Error loading files:", err);
+    }
+}
+
+// Delete selected files
+async function deleteSelected() {
+    let selected = document.querySelectorAll('.fileCheck:checked');
+
+    if (selected.length === 0) {
+        alert("Select at least one file");
+        return;
+    }
+	for (let i = 0; i < selected.length; i++) {
+        let id = selected[i].value;
+
+        await fetch('/api/delete.php', {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({file_id: id}),
+            credentials: "include"
+        });
+    }
+
+    alert("Deleted");
+    loadFiles();
+}
+
+// Load on start
+loadFiles();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Welcome</h2>
+
+<form id="uploadForm">
+    <input type="file" id="resume">
+    <button type="submit">Upload Resume</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+document.getElementById("uploadForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let formData = new FormData();
+    formData.append("resume", document.getElementById("resume").files[0]);
+
+    fetch("api/upload.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("msg").innerText = data.message;
+    });
+});
+</script>
+
+</body>
+</html>

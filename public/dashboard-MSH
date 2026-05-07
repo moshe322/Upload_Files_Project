@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 20px;
+    color: white;
+   /* background: linear-gradient(135deg, #6F4E37, #3E2723);*/
+    background: url('assets/images/pexels-codioful-7135121.jpg') no-repeat center center fixed;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* MAIN ROW */
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Upload section */
+.upload-section {
+    width: 250px;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* All sections */
+.section {
+    flex: 1;
+    min-height: 350px;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* File box */
+.file-box {
+    background: pink;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Buttons */
+.upload-btn { background: green; color:white; padding:10px; width:100%; border:none; }
+.delete-btn { background: red; color:white; padding:10px; border:none; margin-bottom:10px; }
+.download-btn { background: green; color:white; padding:5px; border:none; }
+
+/* File input */
+input[type="file"] {
+    background: blue;
+    color: white;
+    padding: 8px;
+    width: 100%;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">Welcome to Document Page</div>
+
+<div class="container">
+
+<!-- UPLOAD -->
+<div class="upload-section">
+    <h3>Upload File</h3>
+
+    <select id="fileType" style="width:100%; padding:8px;">
+        <option value="">Select Section</option>
+        <option value="photo">Photos</option>
+        <option value="file">Files</option>
+    </select>
+
+    <br><br>
+
+    <form id="uploadForm">
+        <input type="file" id="resume" required>
+        <button class="upload-btn">Upload</button>
+    </form>
+
+    <p id="msg"></p>
+</div>
+
+<!-- PHOTOS -->
+<div class="section">
+    <h3>📸 Photos</h3>
+    <button class="delete-btn" onclick="deleteSelected()">Delete</button>
+    <div id="photoList"></div>
+</div>
+
+<!-- FILES -->
+<div class="section">
+    <h3>📄 Files Upload</h3>
+    <button class="delete-btn" onclick="deleteSelected()">Delete</button>
+    <div id="fileList"></div>
+</div>
+
+<!-- GROUP JOBS -->
+<div class="section">
+    <h3>🎓 Groups Jobs</h3>
+
+    <ul>
+        <li><a href="https://www.jntuk.edu.in/" target="_blank">Group 1 Papers</a></li>
+        <li><a href="https://www.upsc.gov.in/" target="_blank">Group 2 Papers</a></li>
+        <li><a href="https://www.tnpsc.gov.in/" target="_blank">Group 3 Papers</a></li>
+        <li><a href="https://ssc.nic.in/" target="_blank">Group 4 Papers</a></li>
+    </ul>
+</div>
+
+</div>
+
+<script>
+
+// Upload with validation
+document.getElementById("uploadForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    let file = document.getElementById("resume").files[0];
+    let type = document.getElementById("fileType").value;
+
+    if (!type) {
+        alert("Please select section");
+        return;
+    }
+
+    let ext = file.name.split('.').pop().toLowerCase();
+
+    if (type === "photo" && !["jpg","jpeg","png"].includes(ext)) {
+        alert("Wrong file! Choose image for Photos section");
+        return;
+    }
+
+    if (type === "file" && ["jpg","jpeg","png"].includes(ext)) {
+        alert("Wrong file! Choose document for Files section");
+        return;
+    }
+
+    document.getElementById("msg").innerText = "Uploading...";
+
+    let formData = new FormData();
+    formData.append("resume", file);
+
+    let res = await fetch("/api/upload.php", {
+        method:"POST",
+        body:formData,
+        credentials:"include"
+    });
+
+    let data = await res.json();
+    document.getElementById("msg").innerText = data.message;
+
+    loadFiles();
+});
+
+// Load files
+async function loadFiles() {
+    let res = await fetch('/api/get_files.php', {
+        credentials:"include"
+    });
+
+    let files = await res.json();
+
+    let photoHTML = "";
+    let fileHTML = "";
+
+    files.forEach(file => {
+        let ext = file.file_name.split('.').pop().toLowerCase();
+
+        let box = `
+            <div class="file-box">
+                <div>
+                    <input type="checkbox" class="fileCheck" value="${file.id}">
+                    ${file.file_name}
+                </div>
+
+                <a href="/api/download.php?id=${file.id}">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+        `;
+
+        if (["jpg","jpeg","png"].includes(ext)) {
+            photoHTML += box;
+        } else {
+            fileHTML += box;
+        }
+    });
+
+    document.getElementById("photoList").innerHTML = photoHTML || "No photos";
+    document.getElementById("fileList").innerHTML = fileHTML || "No files";
+}
+
+// Delete
+async function deleteSelected(){
+    let selected = document.querySelectorAll('.fileCheck:checked');
+
+    if (selected.length === 0) {
+        alert("Select files to delete");
+        return;
+    }
+
+    for (let s of selected) {
+        await fetch('/api/delete.php', {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({file_id:s.value}),
+            credentials:"include"
+        });
+    }
+
+    loadFiles();
+}
+
+loadFiles();
+
+</script>
+
+</body>
+</html>

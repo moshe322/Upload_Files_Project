@@ -1,0 +1,57 @@
+<?php
+header("Content-Type: application/json");
+
+require_once '../../includes/db.php';
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+if (!isset($data['username'], $data['email'], $data['password'])) {
+    echo json_encode([
+        "status" => "error",
+        "message" => "All fields required"
+    ]);
+    exit;
+}
+
+$username = trim($data['username']);
+$email = trim($data['email']);
+$password = password_hash($data['password'], PASSWORD_DEFAULT);
+
+// check existing user
+$check = $conn->prepare("SELECT id FROM users WHERE email=?");
+$check->bind_param("s", $email);
+$check->execute();
+$res = $check->get_result();
+
+if ($res->num_rows > 0) {
+    echo json_encode([
+        "status"=>"error",
+        "message"=>"User already exists"
+    ]);
+    exit;
+}
+
+// insert user
+$stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+
+if (!$stmt) {
+    echo json_encode([
+        "status"=>"error",
+        "message"=>"DB prepare failed"
+    ]);
+    exit;
+}
+
+$stmt->bind_param("sss", $username, $email, $password);
+
+if ($stmt->execute()) {
+    echo json_encode([
+        "status"=>"success",
+        "message"=>"Signup successful"
+    ]);
+} else {
+    echo json_encode([
+        "status"=>"error",
+        "message"=>"Insert failed"
+    ]);
+}

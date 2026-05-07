@@ -1,0 +1,37 @@
+<?php
+require_once '../../includes/db.php';
+require_once '../../includes/mail.php';
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+$username = $data['username'];
+$email = $data['email'];
+$password = password_hash($data['password'], PASSWORD_DEFAULT);
+
+// check existing user
+$check = $conn->prepare("SELECT id FROM users WHERE email=?");
+$check->bind_param("s", $email);
+$check->execute();
+$res = $check->get_result();
+
+if ($res->num_rows > 0) {
+    echo json_encode([
+        "status"=>"error",
+        "message"=>"User already exists. Please login."
+    ]);
+    exit;
+}
+
+// insert
+$stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $username, $email, $password);
+$stmt->execute();
+
+// ✅ EMAIL
+sendLoginMail($email, "Account created successfully");
+
+// response
+echo json_encode([
+    "status"=>"success",
+    "message"=>"Signup successful"
+]);

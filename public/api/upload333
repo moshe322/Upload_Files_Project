@@ -1,0 +1,29 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    echo json_encode(["status"=>"error","message"=>"Not logged in"]);
+    exit;
+}
+
+if (!isset($_FILES['file'])) {
+    echo json_encode(["status"=>"error","message"=>"No file uploaded"]);
+    exit;
+}
+
+$user_id = $_SESSION['user_id'];
+
+$dir = __DIR__ . "/../../uploads/user_" . $user_id;
+
+if (!is_dir($dir)) {
+    mkdir($dir, 0777, true);
+}
+
+$file = $_FILES['file'];
+$path = $dir . "/" . basename($file['name']);
+
+if (move_uploaded_file($file['tmp_name'], $path)) {
+    echo json_encode(["status"=>"success","message"=>"Uploaded successfully"]);
+} else {
+    echo json_encode(["status"=>"error","message"=>"Upload failed"]);
+}

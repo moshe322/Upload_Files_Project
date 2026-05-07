@@ -1,0 +1,36 @@
+<?php
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+#require __DIR__ . '/../vendor/autoload.php';
+#require_once __DIR__ . '/../config/config.php';
+require_once '../../includes/mail.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+function sendLoginMail($toEmail, $username) {
+
+    $mail = new PHPMailer(true);
+
+    try {
+        $mail->isSMTP();
+        $mail->Host = SMTP_HOST;
+        $mail->SMTPAuth = true;
+        $mail->Username = SMTP_USER;
+        $mail->Password = SMTP_PASS;
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = SMTP_PORT;
+
+        $mail->setFrom(SMTP_USER, 'Login Alert');
+        $mail->addAddress($toEmail);
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Login Notification';
+        $mail->Body = "Hello $username,<br><br>You have successfully logged in.";
+
+        $mail->send();
+
+    } catch (Exception $e) {
+        // Optional: log error
+    }
+}

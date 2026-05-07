@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    background: url('assets/images/pexels-codioful-7135121.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.header {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Upload */
+.upload-section {
+    width: 250px;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Sections FIXED */
+.section {
+    flex: 1;
+    height: 420px;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scroll inside */
+.section-content {
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* Boxes */
+.file-box {
+    background: pink;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Buttons */
+.upload-btn { background: green; color:white; padding:10px; width:100%; border:none; cursor:pointer; }
+.delete-btn { background: red; color:white; padding:10px; border:none; margin-bottom:10px; cursor:pointer; }
+.download-btn { background: green; color:white; padding:5px; border:none; cursor:pointer; }
+
+/* Input */
+input[type="file"] {
+    background: blue;
+    color: white;
+    padding: 8px;
+    width: 100%;
+}
+
+/* Search */
+.search-box {
+    display: flex;
+    gap: 5px;
+}
+.search-box input {
+    flex: 1;
+    padding: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container { flex-direction: column; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">Welcome to Document Page</div>
+
+<div class="container">
+
+<!-- UPLOAD -->
+<div class="upload-section">
+    <h3>Upload File</h3>
+
+    <select id="fileType" style="width:100%; padding:8px;">
+        <option value="">Select Section</option>
+        <option value="photo">Photos</option>
+        <option value="file">Files</option>
+    </select>
+
+    <br><br>
+
+    <form id="uploadForm">
+        <input type="file" id="resume" required>
+        <button class="upload-btn">Upload</button>
+    </form>
+
+    <p id="msg"></p>
+</div>
+
+<!-- PHOTOS -->
+<div class="section">
+    <h3>📸 Photos</h3>
+    <button class="delete-btn" onclick="deleteSelected()">Delete</button>
+    <div class="section-content" id="photoList"></div>
+</div>
+
+<!-- FILES -->
+<div class="section">
+    <h3>📄 Files Upload</h3>
+    <button class="delete-btn" onclick="deleteSelected()">Delete</button>
+    <div class="section-content" id="fileList"></div>
+</div>
+
+<!-- JOBS + PAPERS -->
+<div class="section">
+    <h3>💼 Jobs & Papers</h3>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" id="jobSearch" placeholder="Search jobs (govt, IT...)">
+        <button class="upload-btn" onclick="searchJobs()">Search</button>
+    </div>
+
+    <br>
+
+    <button class="upload-btn" onclick="loadJobs()">Latest Jobs</button>
+    <button class="upload-btn" onclick="loadPreviousPapers()">Previous Papers</button>
+
+    <div class="section-content" id="jobsList"></div>
+    <div class="section-content" id="papersList"></div>
+</div>
+
+</div>
+
+<script>
+
+// UPLOAD
+document.getElementById("uploadForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    let file = document.getElementById("resume").files[0];
+    let type = document.getElementById("fileType").value;
+
+    if (!type) return alert("Select section");
+
+    let ext = file.name.split('.').pop().toLowerCase();
+
+    if (type === "photo" && !["jpg","jpeg","png"].includes(ext)) {
+        return alert("Wrong file for Photos");
+    }
+
+    if (type === "file" && ["jpg","jpeg","png"].includes(ext)) {
+        return alert("Wrong file for Files");
+    }
+
+    let formData = new FormData();
+    formData.append("resume", file);
+
+    let res = await fetch("/api/upload.php", {
+        method:"POST",
+        body:formData,
+        credentials:"include"
+    });
+
+    let data = await res.json();
+    document.getElementById("msg").innerText = data.message;
+
+    loadFiles();
+});
+
+// LOAD FILES
+async function loadFiles() {
+    let res = await fetch('/api/get_files.php', {credentials:"include"});
+    let files = await res.json();
+
+    let photoHTML="", fileHTML="";
+
+    files.forEach(f => {
+        let ext = f.file_name.split('.').pop().toLowerCase();
+
+        let box = `
+        <div class="file-box">
+            <div>
+                <input type="checkbox" class="fileCheck" value="${f.id}">
+                ${f.file_name}
+            </div>
+            <a href="/api/download.php?id=${f.id}">
+                <button class="download-btn">Download</button>
+            </a>
+        </div>`;
+
+        if (["jpg","jpeg","png"].includes(ext)) photoHTML += box;
+        else fileHTML += box;
+    });
+
+    document.getElementById("photoList").innerHTML = photoHTML || "No photos";
+    document.getElementById("fileList").innerHTML = fileHTML || "No files";
+}
+
+// DELETE
+async function deleteSelected(){
+    let selected = document.querySelectorAll('.fileCheck:checked');
+
+    for (let s of selected) {
+        await fetch('/api/delete.php', {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({file_id:s.value}),
+            credentials:"include"
+        });
+    }
+
+    loadFiles();
+}
+
+// JOBS
+async function loadJobs() {
+    document.getElementById("papersList").innerHTML = "";
+    document.getElementById("jobsList").innerHTML = "Loading...";
+
+    let res = await fetch('/api/jobs.php');
+    let jobs = await res.json();
+
+    displayJobs(jobs);
+}
+
+async function searchJobs() {
+    let keyword = document.getElementById("jobSearch").value.toLowerCase();
+
+    let res = await fetch('/api/jobs.php');
+    let jobs = await res.json();
+
+    let filtered = jobs.filter(j =>
+        j.title.toLowerCase().includes(keyword)
+    );
+
+    displayJobs(filtered);
+}
+
+function displayJobs(jobs) {
+    let html = "";
+
+    jobs.slice(0,10).forEach(job => {
+        html += `
+        <div class="file-box">
+            <div>
+                <b>${job.title}</b><br>
+                <small>${job.date}</small>
+            </div>
+            <a href="${job.link}" target="_blank">
+                <button class="download-btn">Apply</button>
+            </a>
+        </div>`;
+    });
+
+    document.getElementById("jobsList").innerHTML = html || "No jobs found";
+}
+
+// PREVIOUS PAPERS
+async function loadPreviousPapers() {
+    document.getElementById("jobsList").innerHTML = "";
+    document.getElementById("papersList").innerHTML = "Loading...";
+
+    let res = await fetch('/api/previous_papers.php');
+    let data = await res.json();
+
+    let html = "";
+
+    for (let category in data) {
+        html += `<h4>${category.toUpperCase()}</h4>`;
+
+        data[category].forEach(p => {
+            html += `
+            <div class="file-box">
+                <div>${p.title}</div>
+                <a href="${p.link}" target="_blank">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>`;
+        });
+    }
+
+    document.getElementById("papersList").innerHTML = html;
+}
+
+loadFiles();
+
+</script>
+
+</body>
+</html>

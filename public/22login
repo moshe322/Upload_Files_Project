@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+</head>
+<body>
+
+<h2>Login</h2>
+
+<input type="email" id="email" placeholder="Email"><br>
+<input type="password" id="password" placeholder="Password"><br>
+<button onclick="login()">Login</button>
+
+<p id="msg"></p>
+
+<!-- OTP BOX -->
+<div id="otpBox" style="display:none;">
+    <h3>Enter OTP</h3>
+    <input type="text" id="otp">
+    <button onclick="verifyOTP()">Verify</button>
+</div>
+
+<script>
+function login() {
+    fetch("api/login.php", {
+        method: "POST",
+        body: JSON.stringify({
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        })
+    })
+    .then(r=>r.json())
+    .then(data=>{
+        document.getElementById("msg").innerText = data.message;
+
+        if(data.status === "otp_sent"){
+            document.getElementById("otpBox").style.display = "block";
+        }
+    });
+}
+
+function verifyOTP() {
+    fetch("api/verify_otp.php", {
+        method: "POST",
+        body: JSON.stringify({
+            otp: document.getElementById("otp").value
+        })
+    })
+    .then(r=>r.json())
+    .then(data=>{
+        if(data.status === "success"){
+            window.location.href = "dashboard.html";
+        } else {
+            document.getElementById("msg").innerText = data.message;
+        }
+    });
+}
+</script>
+
+</body>
+</html>

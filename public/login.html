@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 🌄 BACKGROUND IMAGE */
+/*    background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') no-repeat center center/cover; */
+    background: url('assets/images/login-bg.png');
+
+
+    font-family: Arial;
+}
+
+/* 🔲 Login Box */
+.box {
+    width: 350px;
+    padding: 25px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* 🔤 Inputs */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* 🔵 Button */
+button {
+    width: 95%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* 🔥 Hover effect */
+button:hover {
+    background: #0056b3;
+}
+
+/* 🔗 Link */
+a {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* OTP box styling */
+#otpBox {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Login</h2>
+
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p id="msg"></p>
+
+    <div id="otpBox" style="display:none;">
+        <h3>Enter OTP</h3>
+        <input type="text" id="otp">
+        <button onclick="verifyOTP()">Verify OTP</button>
+    </div>
+
+    <p>
+        Don’t have account?
+        <a href="signup.html">Register</a>
+    </p>
+
+</div>
+
+<script src="assets/js/login.js"></script>
+
+</body>
+</html>

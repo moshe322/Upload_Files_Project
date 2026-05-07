@@ -1,0 +1,368 @@
+[04-May-2026 14:27:10 UTC] LOGIN API CALLED
+[04-May-2026 14:27:10 UTC] Login attempt: maheshvaleru7@gmail.com
+[04-May-2026 14:27:10 UTC] OTP generated for user ID: 15
+[04-May-2026 14:27:32 UTC] VERIFY OTP API CALLED
+[04-May-2026 14:27:32 UTC] GET FILES API CALLED
+[04-May-2026 14:27:32 UTC] Files fetched: 0
+[04-May-2026 14:27:52 UTC] UPLOAD API CALLED
+[04-May-2026 14:27:52 UTC] Uploading file: IMG-20260504-WA0021.jpg
+[04-May-2026 14:27:52 UTC] File uploaded successfully: 1777904872_IMG-20260504-WA0021.jpg
+[04-May-2026 14:27:52 UTC] GET FILES API CALLED
+[04-May-2026 14:27:52 UTC] Files fetched: 1
+[04-May-2026 14:27:55 UTC] UPLOAD API CALLED
+[04-May-2026 14:27:55 UTC] Uploading file: IMG-20260504-WA0021.jpg
+[04-May-2026 14:27:55 UTC] File uploaded successfully: 1777904875_IMG-20260504-WA0021.jpg
+[04-May-2026 14:27:55 UTC] GET FILES API CALLED
+[04-May-2026 14:27:55 UTC] Files fetched: 2
+[04-May-2026 14:28:05 UTC] DELETE API CALLED
+[04-May-2026 14:28:05 UTC] Deleting file ID: 19
+[04-May-2026 14:28:05 UTC] File deleted successfully
+[04-May-2026 14:28:05 UTC] GET FILES API CALLED
+[04-May-2026 14:28:05 UTC] Files fetched: 1
+[04-May-2026 14:36:02 UTC] GET FILES API CALLED
+[04-May-2026 14:36:02 UTC] User not logged in for get_files
+[04-May-2026 14:41:23 UTC] LOGIN API CALLED
+[04-May-2026 14:41:23 UTC] Login attempt: tmoshe52@gmail.com
+[04-May-2026 14:41:23 UTC] OTP generated for user ID: 1
+[04-May-2026 14:43:17 UTC] VERIFY OTP API CALLED
+[04-May-2026 14:43:18 UTC] GET FILES API CALLED
+[04-May-2026 14:43:18 UTC] Files fetched: 1
+[04-May-2026 15:26:46 UTC] UPLOAD API CALLED
+[04-May-2026 15:26:46 UTC] GET FILES API CALLED
+[04-May-2026 15:26:46 UTC] User not logged in for get_files
+[04-May-2026 15:26:56 UTC] UPLOAD API CALLED
+[04-May-2026 15:26:57 UTC] GET FILES API CALLED
+[04-May-2026 15:26:57 UTC] User not logged in for get_files
+[04-May-2026 15:29:29 UTC] GET FILES API CALLED
+[04-May-2026 15:29:29 UTC] User not logged in for get_files
+[04-May-2026 15:31:16 UTC] GET FILES API CALLED
+[04-May-2026 15:31:16 UTC] User not logged in for get_files
+[04-May-2026 15:31:43 UTC] GET FILES API CALLED
+[04-May-2026 15:31:43 UTC] User not logged in for get_files
+[04-May-2026 15:31:51 UTC] GET FILES API CALLED
+[04-May-2026 15:31:51 UTC] User not logged in for get_files
+[04-May-2026 15:46:24 UTC] GET FILES API CALLED
+[04-May-2026 15:46:24 UTC] User not logged in for get_files
+[04-May-2026 18:18:36 UTC] LOGIN API CALLED
+[04-May-2026 18:18:36 UTC] Login attempt: tmoshe52@gmail.com
+[04-May-2026 18:18:36 UTC] OTP generated for user ID: 1
+[04-May-2026 18:21:29 UTC] VERIFY OTP API CALLED
+[04-May-2026 18:21:30 UTC] GET FILES API CALLED
+[04-May-2026 18:21:30 UTC] Files fetched: 1
+[04-May-2026 18:21:33 UTC] GET FILES API CALLED
+[04-May-2026 18:21:33 UTC] Files fetched: 1
+[04-May-2026 18:21:34 UTC] GET FILES API CALLED
+[04-May-2026 18:21:34 UTC] Files fetched: 1
+[04-May-2026 18:21:35 UTC] GET FILES API CALLED
+[04-May-2026 18:21:35 UTC] Files fetched: 1
+[05-May-2026 02:21:43 UTC] GET FILES API CALLED
+[05-May-2026 02:21:43 UTC] User not logged in for get_files
+[05-May-2026 02:41:51 UTC] LOGIN API CALLED
+[05-May-2026 02:41:51 UTC] Login attempt: tmoshe52@gmail.com
+[05-May-2026 02:41:51 UTC] OTP generated for user ID: 1
+[05-May-2026 02:42:19 UTC] VERIFY OTP API CALLED
+[05-May-2026 02:42:19 UTC] GET FILES API CALLED
+[05-May-2026 02:42:19 UTC] Files fetched: 1
+[05-May-2026 02:42:21 UTC] GET FILES API CALLED
+[05-May-2026 02:42:21 UTC] Files fetched: 1
+[05-May-2026 02:42:22 UTC] GET FILES API CALLED
+[05-May-2026 02:42:22 UTC] Files fetched: 1
+[05-May-2026 02:42:23 UTC] GET FILES API CALLED
+[05-May-2026 02:42:23 UTC] Files fetched: 1
+[05-May-2026 02:42:23 UTC] GET FILES API CALLED
+[05-May-2026 02:42:23 UTC] Files fetched: 1
+[05-May-2026 02:42:23 UTC] GET FILES API CALLED
+[05-May-2026 02:42:23 UTC] Files fetched: 1
+[05-May-2026 02:42:23 UTC] GET FILES API CALLED
+[05-May-2026 02:42:23 UTC] Files fetched: 1
+[05-May-2026 02:42:24 UTC] GET FILES API CALLED
+[05-May-2026 02:42:24 UTC] Files fetched: 1
+[05-May-2026 02:42:24 UTC] GET FILES API CALLED
+[05-May-2026 02:42:24 UTC] Files fetched: 1
+[05-May-2026 02:45:24 UTC] GET FILES API CALLED
+[05-May-2026 02:45:24 UTC] Files fetched: 1
+[05-May-2026 02:45:25 UTC] GET FILES API CALLED
+[05-May-2026 02:45:25 UTC] Files fetched: 1
+[05-May-2026 02:46:30 UTC] UPLOAD API CALLED
+[05-May-2026 02:46:33 UTC] GET FILES API CALLED
+[05-May-2026 02:46:33 UTC] Files fetched: 1
+[05-May-2026 02:47:47 UTC] UPLOAD API CALLED
+[05-May-2026 02:47:47 UTC] GET FILES API CALLED
+[05-May-2026 02:47:47 UTC] Files fetched: 1
+[05-May-2026 02:48:01 UTC] UPLOAD API CALLED
+[05-May-2026 02:48:01 UTC] GET FILES API CALLED
+[05-May-2026 02:48:01 UTC] Files fetched: 1
+[05-May-2026 02:48:31 UTC] GET FILES API CALLED
+[05-May-2026 02:48:31 UTC] Files fetched: 1
+[05-May-2026 02:49:23 UTC] UPLOAD API CALLED
+[05-May-2026 02:49:23 UTC] GET FILES API CALLED
+[05-May-2026 02:49:23 UTC] Files fetched: 1
+[05-May-2026 02:49:44 UTC] DELETE API CALLED
+[05-May-2026 02:49:44 UTC] Deleting file ID: 18
+[05-May-2026 02:49:44 UTC] File deleted successfully
+[05-May-2026 02:49:48 UTC] DELETE API CALLED
+[05-May-2026 02:49:48 UTC] Deleting file ID: 18
+[05-May-2026 02:49:53 UTC] GET FILES API CALLED
+[05-May-2026 02:49:53 UTC] Files fetched: 0
+[05-May-2026 02:49:56 UTC] GET FILES API CALLED
+[05-May-2026 02:49:56 UTC] Files fetched: 0
+[05-May-2026 02:49:59 UTC] UPLOAD API CALLED
+[05-May-2026 02:49:59 UTC] GET FILES API CALLED
+[05-May-2026 02:49:59 UTC] Files fetched: 0
+[05-May-2026 02:51:25 UTC] UPLOAD API CALLED
+[05-May-2026 02:51:25 UTC] GET FILES API CALLED
+[05-May-2026 02:51:25 UTC] Files fetched: 0
+[05-May-2026 02:53:53 UTC] GET FILES API CALLED
+[05-May-2026 02:53:53 UTC] User not logged in for get_files
+[05-May-2026 02:54:50 UTC] UPLOAD API CALLED
+[05-May-2026 02:54:52 UTC] GET FILES API CALLED
+[05-May-2026 02:54:52 UTC] User not logged in for get_files
+[05-May-2026 02:55:56 UTC] LOGIN API CALLED
+[05-May-2026 02:55:56 UTC] Login attempt: thammuluriprasanna01@gmail.com
+[05-May-2026 02:56:25 UTC] LOGIN API CALLED
+[05-May-2026 02:56:25 UTC] Login attempt: thammuluriprasanna01@gmail.com
+[05-May-2026 02:56:26 UTC] OTP generated for user ID: 16
+[05-May-2026 02:56:53 UTC] VERIFY OTP API CALLED
+[05-May-2026 02:56:53 UTC] GET FILES API CALLED
+[05-May-2026 02:56:53 UTC] Files fetched: 0
+[05-May-2026 02:58:27 UTC] UPLOAD API CALLED
+[05-May-2026 02:58:28 UTC] GET FILES API CALLED
+[05-May-2026 02:58:28 UTC] Files fetched: 0
+[05-May-2026 03:00:01 UTC] UPLOAD API CALLED
+[05-May-2026 03:00:02 UTC] GET FILES API CALLED
+[05-May-2026 03:00:02 UTC] Files fetched: 0
+[05-May-2026 03:01:57 UTC] UPLOAD API CALLED
+[05-May-2026 03:01:57 UTC] GET FILES API CALLED
+[05-May-2026 03:01:57 UTC] Files fetched: 0
+[05-May-2026 03:29:30 UTC] LOGIN API CALLED
+[05-May-2026 03:29:30 UTC] Login attempt: thammulurimoshe786@gmail.com
+[05-May-2026 03:29:53 UTC] LOGIN API CALLED
+[05-May-2026 03:29:53 UTC] Login attempt: thammulurimoshe786@gmail.com
+[05-May-2026 03:29:54 UTC] OTP generated for user ID: 17
+[05-May-2026 03:30:17 UTC] VERIFY OTP API CALLED
+[05-May-2026 03:30:18 UTC] GET FILES API CALLED
+[05-May-2026 03:30:18 UTC] Files fetched: 0
+[05-May-2026 03:38:18 UTC] LOGIN API CALLED
+[05-May-2026 03:38:18 UTC] Login attempt: thammulurimoshe786@gmail.com
+[05-May-2026 03:38:18 UTC] OTP generated for user ID: 17
+[05-May-2026 03:38:52 UTC] VERIFY OTP API CALLED
+[05-May-2026 03:38:52 UTC] GET FILES API CALLED
+[05-May-2026 03:38:52 UTC] Files fetched: 0
+[05-May-2026 03:39:01 UTC] UPLOAD API CALLED
+[05-May-2026 03:39:01 UTC] Uploading file: Screenshot from 2026-05-05 08-07-21.png
+[05-May-2026 03:39:01 UTC] File uploaded successfully: 1777952341_Screenshot from 2026-05-05 08-07-21.png
+[05-May-2026 03:39:01 UTC] GET FILES API CALLED
+[05-May-2026 03:39:01 UTC] Files fetched: 1
+[05-May-2026 03:39:32 UTC] UPLOAD API CALLED
+[05-May-2026 03:39:32 UTC] Uploading file: signup.jpg
+[05-May-2026 03:39:32 UTC] File uploaded successfully: 1777952372_signup.jpg
+[05-May-2026 03:39:32 UTC] GET FILES API CALLED
+[05-May-2026 03:39:32 UTC] Files fetched: 2
+[05-May-2026 03:39:36 UTC] UPLOAD API CALLED
+[05-May-2026 03:39:36 UTC] Uploading file: Screenshot from 2026-05-04 21-24-04.png
+[05-May-2026 03:39:36 UTC] File uploaded successfully: 1777952376_Screenshot from 2026-05-04 21-24-04.png
+[05-May-2026 03:39:38 UTC] GET FILES API CALLED
+[05-May-2026 03:39:38 UTC] Files fetched: 3
+[05-May-2026 03:39:40 UTC] UPLOAD API CALLED
+[05-May-2026 03:39:40 UTC] Uploading file: Screenshot from 2026-05-04 21-24-04.png
+[05-May-2026 03:39:40 UTC] File uploaded successfully: 1777952380_Screenshot from 2026-05-04 21-24-04.png
+[05-May-2026 03:39:41 UTC] GET FILES API CALLED
+[05-May-2026 03:39:41 UTC] Files fetched: 4
+[05-May-2026 03:39:55 UTC] UPLOAD API CALLED
+[05-May-2026 03:39:55 UTC] Uploading file: signup.jpg
+[05-May-2026 03:39:55 UTC] File uploaded successfully: 1777952395_signup.jpg
+[05-May-2026 03:39:55 UTC] GET FILES API CALLED
+[05-May-2026 03:39:55 UTC] Files fetched: 5
+[05-May-2026 05:10:45 UTC] GET FILES API CALLED
+[05-May-2026 05:10:45 UTC] User not logged in for get_files
+[05-May-2026 05:11:03 UTC] UPLOAD API CALLED
+[05-May-2026 05:11:03 UTC] GET FILES API CALLED
+[05-May-2026 05:11:03 UTC] User not logged in for get_files
+[05-May-2026 05:15:01 UTC] GET FILES API CALLED
+[05-May-2026 05:15:01 UTC] User not logged in for get_files
+[05-May-2026 05:15:03 UTC] GET FILES API CALLED
+[05-May-2026 05:15:03 UTC] User not logged in for get_files
+[05-May-2026 05:17:02 UTC] GET FILES API CALLED
+[05-May-2026 05:17:02 UTC] User not logged in for get_files
+[05-May-2026 05:18:21 UTC] GET FILES API CALLED
+[05-May-2026 05:18:21 UTC] User not logged in for get_files
+[05-May-2026 05:20:07 UTC] GET FILES API CALLED
+[05-May-2026 05:20:07 UTC] User not logged in for get_files
+[05-May-2026 05:20:24 UTC] UPLOAD API CALLED
+[05-May-2026 05:20:24 UTC] GET FILES API CALLED
+[05-May-2026 05:20:24 UTC] User not logged in for get_files
+[05-May-2026 05:20:47 UTC] LOGIN API CALLED
+[05-May-2026 05:20:47 UTC] Login attempt: thammulurimoshe786@gmail.com
+[05-May-2026 05:20:47 UTC] OTP generated for user ID: 17
+[05-May-2026 05:21:11 UTC] VERIFY OTP API CALLED
+[05-May-2026 05:21:11 UTC] GET FILES API CALLED
+[05-May-2026 05:21:11 UTC] Files fetched: 5
+[05-May-2026 05:21:22 UTC] DELETE API CALLED
+[05-May-2026 05:21:22 UTC] Deleting file ID: 21
+[05-May-2026 05:21:22 UTC] File deleted successfully
+[05-May-2026 05:21:22 UTC] DELETE API CALLED
+[05-May-2026 05:21:22 UTC] Deleting file ID: 22
+[05-May-2026 05:21:22 UTC] File deleted successfully
+[05-May-2026 05:21:22 UTC] DELETE API CALLED
+[05-May-2026 05:21:22 UTC] Deleting file ID: 23
+[05-May-2026 05:21:22 UTC] File deleted successfully
+[05-May-2026 05:21:22 UTC] DELETE API CALLED
+[05-May-2026 05:21:22 UTC] Deleting file ID: 24
+[05-May-2026 05:21:22 UTC] File deleted successfully
+[05-May-2026 05:21:22 UTC] DELETE API CALLED
+[05-May-2026 05:21:22 UTC] Deleting file ID: 25
+[05-May-2026 05:21:22 UTC] File deleted successfully
+[05-May-2026 05:21:22 UTC] GET FILES API CALLED
+[05-May-2026 05:21:22 UTC] Files fetched: 0
+[05-May-2026 05:21:35 UTC] UPLOAD API CALLED
+[05-May-2026 05:21:35 UTC] Uploading file: Screenshot from 2026-05-03 11-26-40.png
+[05-May-2026 05:21:35 UTC] File uploaded successfully: 1777958495_Screenshot from 2026-05-03 11-26-40.png
+[05-May-2026 05:21:35 UTC] GET FILES API CALLED
+[05-May-2026 05:21:35 UTC] Files fetched: 1
+[05-May-2026 05:23:15 UTC] GET FILES API CALLED
+[05-May-2026 05:23:15 UTC] User not logged in for get_files
+[05-May-2026 05:35:19 UTC] GET FILES API CALLED
+[05-May-2026 05:35:19 UTC] Files fetched: 1
+[05-May-2026 05:38:29 UTC] GET FILES API CALLED
+[05-May-2026 05:38:29 UTC] Files fetched: 1
+[05-May-2026 05:39:40 UTC] UPLOAD API CALLED
+[05-May-2026 05:39:40 UTC] Uploading file: Screenshot from 2026-05-05 08-07-21.png
+[05-May-2026 05:39:40 UTC] File uploaded successfully: 1777959580_Screenshot from 2026-05-05 08-07-21.png
+[05-May-2026 05:39:41 UTC] GET FILES API CALLED
+[05-May-2026 05:39:41 UTC] Files fetched: 2
+[05-May-2026 05:40:19 UTC] DELETE API CALLED
+[05-May-2026 05:40:19 UTC] Deleting file ID: 26
+[05-May-2026 05:40:19 UTC] File deleted successfully
+[05-May-2026 05:40:20 UTC] DELETE API CALLED
+[05-May-2026 05:40:20 UTC] Deleting file ID: 27
+[05-May-2026 05:40:20 UTC] File deleted successfully
+[05-May-2026 05:40:20 UTC] GET FILES API CALLED
+[05-May-2026 05:40:20 UTC] Files fetched: 0
+[05-May-2026 05:44:44 UTC] GET FILES API CALLED
+[05-May-2026 05:44:44 UTC] Files fetched: 0
+[05-May-2026 05:45:09 UTC] UPLOAD API CALLED
+[05-May-2026 05:45:09 UTC] Uploading file: Moshe offer.pdf
+[05-May-2026 05:45:09 UTC] File uploaded successfully: 1777959909_Moshe offer.pdf
+[05-May-2026 05:45:09 UTC] GET FILES API CALLED
+[05-May-2026 05:45:09 UTC] Files fetched: 1
+[05-May-2026 05:45:46 UTC] GET FILES API CALLED
+[05-May-2026 05:45:46 UTC] User not logged in for get_files
+[05-May-2026 05:48:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'prasannathammuluri1994@gmail.com' for key 'users.email' in /var/www/html/login-app/public/api/signup.php:13
+Stack trace:
+#0 /var/www/html/login-app/public/api/signup.php(13): mysqli_stmt->execute()
+#1 {main}
+  thrown in /var/www/html/login-app/public/api/signup.php on line 13
+[05-May-2026 05:49:05 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'prasannathammuluri1994@gmail.com' for key 'users.email' in /var/www/html/login-app/public/api/signup.php:13
+Stack trace:
+#0 /var/www/html/login-app/public/api/signup.php(13): mysqli_stmt->execute()
+#1 {main}
+  thrown in /var/www/html/login-app/public/api/signup.php on line 13
+[05-May-2026 05:49:08 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'prasannathammuluri1994@gmail.com' for key 'users.email' in /var/www/html/login-app/public/api/signup.php:13
+Stack trace:
+#0 /var/www/html/login-app/public/api/signup.php(13): mysqli_stmt->execute()
+#1 {main}
+  thrown in /var/www/html/login-app/public/api/signup.php on line 13
+[05-May-2026 05:49:09 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'prasannathammuluri1994@gmail.com' for key 'users.email' in /var/www/html/login-app/public/api/signup.php:13
+Stack trace:
+#0 /var/www/html/login-app/public/api/signup.php(13): mysqli_stmt->execute()
+#1 {main}
+  thrown in /var/www/html/login-app/public/api/signup.php on line 13
+[05-May-2026 05:49:12 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'prasannathammuluri1994@gmail.com' for key 'users.email' in /var/www/html/login-app/public/api/signup.php:13
+Stack trace:
+#0 /var/www/html/login-app/public/api/signup.php(13): mysqli_stmt->execute()
+#1 {main}
+  thrown in /var/www/html/login-app/public/api/signup.php on line 13
+[05-May-2026 05:49:12 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'prasannathammuluri1994@gmail.com' for key 'users.email' in /var/www/html/login-app/public/api/signup.php:13
+Stack trace:
+#0 /var/www/html/login-app/public/api/signup.php(13): mysqli_stmt->execute()
+#1 {main}
+  thrown in /var/www/html/login-app/public/api/signup.php on line 13
+[05-May-2026 05:49:13 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'prasannathammuluri1994@gmail.com' for key 'users.email' in /var/www/html/login-app/public/api/signup.php:13
+Stack trace:
+#0 /var/www/html/login-app/public/api/signup.php(13): mysqli_stmt->execute()
+#1 {main}
+  thrown in /var/www/html/login-app/public/api/signup.php on line 13
+[05-May-2026 05:49:13 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'prasannathammuluri1994@gmail.com' for key 'users.email' in /var/www/html/login-app/public/api/signup.php:13
+Stack trace:
+#0 /var/www/html/login-app/public/api/signup.php(13): mysqli_stmt->execute()
+#1 {main}
+  thrown in /var/www/html/login-app/public/api/signup.php on line 13
+[05-May-2026 05:49:40 UTC] LOGIN API CALLED
+[05-May-2026 05:49:40 UTC] Login attempt: tmoshe52@gmail.com
+[05-May-2026 05:49:40 UTC] OTP generated for user ID: 1
+[05-May-2026 05:50:23 UTC] VERIFY OTP API CALLED
+[05-May-2026 05:50:25 UTC] GET FILES API CALLED
+[05-May-2026 05:50:25 UTC] Files fetched: 0
+[05-May-2026 05:50:48 UTC] UPLOAD API CALLED
+[05-May-2026 05:50:48 UTC] Uploading file: 1777782680_IMG-20260427-WA0019.jpg
+[05-May-2026 05:50:48 UTC] File uploaded successfully: 1777960248_1777782680_IMG-20260427-WA0019.jpg
+[05-May-2026 05:50:48 UTC] GET FILES API CALLED
+[05-May-2026 05:50:48 UTC] Files fetched: 1
+[05-May-2026 06:12:33 UTC] LOGIN API CALLED
+[05-May-2026 06:12:33 UTC] Login attempt: tmoshe52@gmail.com
+[05-May-2026 06:12:33 UTC] OTP generated for user ID: 1
+[05-May-2026 06:13:00 UTC] VERIFY OTP API CALLED
+[05-May-2026 06:13:00 UTC] GET FILES API CALLED
+[05-May-2026 06:13:00 UTC] Files fetched: 1
+[05-May-2026 07:53:14 UTC] GET FILES API CALLED
+[05-May-2026 07:53:14 UTC] User not logged in for get_files
+[05-May-2026 08:54:01 UTC] GET FILES API CALLED
+[05-May-2026 08:54:01 UTC] User not logged in for get_files
+[05-May-2026 08:55:05 UTC] GET FILES API CALLED
+[05-May-2026 08:55:05 UTC] User not logged in for get_files
+[05-May-2026 08:56:06 UTC] LOGIN API CALLED
+[05-May-2026 08:56:06 UTC] Login attempt: tmoshe52@gmail.com
+[05-May-2026 08:56:06 UTC] OTP generated for user ID: 1
+[05-May-2026 08:56:41 UTC] VERIFY OTP API CALLED
+[05-May-2026 08:56:41 UTC] GET FILES API CALLED
+[05-May-2026 08:56:41 UTC] Files fetched: 1
+[05-May-2026 08:56:51 UTC] DELETE API CALLED
+[05-May-2026 08:56:51 UTC] Deleting file ID: 29
+[05-May-2026 08:56:51 UTC] File deleted successfully
+[05-May-2026 08:56:52 UTC] GET FILES API CALLED
+[05-May-2026 08:56:52 UTC] Files fetched: 0
+[05-May-2026 09:03:37 UTC] GET FILES API CALLED
+[05-May-2026 09:03:37 UTC] Files fetched: 0
+[05-May-2026 09:24:26 UTC] GET FILES API CALLED
+[05-May-2026 09:24:26 UTC] Files fetched: 0
+[05-May-2026 09:26:51 UTC] GET FILES API CALLED
+[05-May-2026 09:26:51 UTC] Files fetched: 0
+[05-May-2026 09:42:30 UTC] GET FILES API CALLED
+[05-May-2026 09:42:30 UTC] Files fetched: 0
+[05-May-2026 09:46:54 UTC] GET FILES API CALLED
+[05-May-2026 09:46:54 UTC] Files fetched: 0
+[05-May-2026 09:48:24 UTC] LOGIN API CALLED
+[05-May-2026 09:48:24 UTC] Login attempt: tmoshe52@gmail.com
+[05-May-2026 09:48:24 UTC] OTP generated for user ID: 1
+[05-May-2026 09:48:51 UTC] VERIFY OTP API CALLED
+[05-May-2026 09:48:52 UTC] GET FILES API CALLED
+[05-May-2026 09:48:52 UTC] Files fetched: 0
+[05-May-2026 09:49:05 UTC] UPLOAD API CALLED
+[05-May-2026 09:49:05 UTC] Uploading file: Moshe offer.pdf
+[05-May-2026 09:49:05 UTC] File uploaded successfully: 1777974545_Moshe offer.pdf
+[05-May-2026 09:49:05 UTC] GET FILES API CALLED
+[05-May-2026 09:49:05 UTC] Files fetched: 1
+[05-May-2026 09:49:26 UTC] UPLOAD API CALLED
+[05-May-2026 09:49:26 UTC] Uploading file: Screenshot from 2026-05-05 08-07-21.png
+[05-May-2026 09:49:26 UTC] File uploaded successfully: 1777974566_Screenshot from 2026-05-05 08-07-21.png
+[05-May-2026 09:49:26 UTC] GET FILES API CALLED
+[05-May-2026 09:49:26 UTC] Files fetched: 2
+[05-May-2026 10:05:59 UTC] GET FILES API CALLED
+[05-May-2026 10:05:59 UTC] Files fetched: 2
+[05-May-2026 10:07:13 UTC] GET FILES API CALLED
+[05-May-2026 10:07:13 UTC] Files fetched: 2
+[05-May-2026 10:09:28 UTC] LOGIN API CALLED
+[05-May-2026 10:09:28 UTC] Login attempt: n@gmail.com
+[05-May-2026 10:09:28 UTC] OTP generated for user ID: 26
+[05-May-2026 10:10:11 UTC] LOGIN API CALLED
+[05-May-2026 10:10:11 UTC] Login attempt: mthammuluri@gmail.com
+[05-May-2026 10:10:12 UTC] OTP generated for user ID: 27
+[05-May-2026 10:10:47 UTC] VERIFY OTP API CALLED
+[05-May-2026 10:10:48 UTC] GET FILES API CALLED
+[05-May-2026 10:10:48 UTC] Files fetched: 0
+[05-May-2026 13:55:17 UTC] LOGIN API CALLED
+[05-May-2026 13:55:17 UTC] Login attempt: tmoshe52@gmail.com
+[05-May-2026 13:55:18 UTC] OTP generated for user ID: 1
+[05-May-2026 13:55:52 UTC] VERIFY OTP API CALLED
+[05-May-2026 13:55:52 UTC] GET FILES API CALLED
+[05-May-2026 13:55:52 UTC] Files fetched: 2
